@@ -38,6 +38,66 @@
         $('html, body').animate({scrollTop: 0}, 1500, 'easeInOutExpo');
         return false;
     });
+
+
+    // WhatsApp form submit
+    var heliosWhatsAppNumber = '919380174938';
+
+    function heliosGetField(form, name) {
+        var field = form.querySelector('[name="' + name + '"]');
+        if (!field) {
+            return '';
+        }
+        return (field.value || '').trim();
+    }
+
+    function heliosOpenWhatsApp(message) {
+        var url = 'https://wa.me/' + heliosWhatsAppNumber + '?text=' + encodeURIComponent(message);
+        window.open(url, '_blank', 'noopener,noreferrer');
+    }
+
+    function heliosBuildContactMessage(form) {
+        var message = '*Helios Electronics - Contact Inquiry*\n\n';
+        message += 'Name: ' + heliosGetField(form, 'name') + '\n';
+        message += 'Email: ' + heliosGetField(form, 'email') + '\n';
+        message += 'Subject: ' + (heliosGetField(form, 'subject') || 'General Inquiry') + '\n\n';
+        message += 'Message:\n' + heliosGetField(form, 'message');
+        return message;
+    }
+
+    function heliosBuildQuoteMessage(form) {
+        var message = '*Helios Electronics - RFQ / Quote Request*\n\n';
+        message += 'Name: ' + heliosGetField(form, 'name') + '\n';
+        message += 'Email: ' + heliosGetField(form, 'email') + '\n';
+        message += 'Phone: ' + (heliosGetField(form, 'phone') || 'N/A') + '\n';
+        message += 'Part Number: ' + heliosGetField(form, 'partnumber') + '\n';
+        message += 'Manufacturer (MFR): ' + heliosGetField(form, 'mfr') + '\n';
+        message += 'Quantity: ' + heliosGetField(form, 'quantity') + '\n';
+
+        var notes = heliosGetField(form, 'message');
+        if (notes) {
+            message += '\nAdditional Requirements:\n' + notes;
+        }
+
+        return message;
+    }
+
+    $('.helios-whatsapp-form').on('submit', function (e) {
+        e.preventDefault();
+
+        var form = this;
+        if (!form.checkValidity()) {
+            form.reportValidity();
+            return;
+        }
+
+        var formType = $(form).data('form-type');
+        var whatsappMessage = formType === 'quote'
+            ? heliosBuildQuoteMessage(form)
+            : heliosBuildContactMessage(form);
+
+        heliosOpenWhatsApp(whatsappMessage);
+    });
     
 })(jQuery);
 
