@@ -42,12 +42,9 @@
     <div class="container-fluid bg-primary text-white helios-topbar">
         <div class="container py-2 py-lg-3">
             <div class="d-flex align-items-center justify-content-between justify-content-lg-start flex-wrap gap-2">
-                <a href="index.html" class="helios-logo-link d-none d-lg-inline-flex">
-                    <img src="img/logo.png" alt="Helios Electronics" class="helios-logo helios-logo-topbar">
-                </a>
                 <div class="d-flex align-items-center flex-wrap ms-lg-auto helios-topbar-contact">
                     <small class="helios-topbar-item helios-topbar-address d-none d-xl-inline"><i class="fa fa-map-marker-alt me-2"></i>1st Floor, No.2718/3015, Nagarbhavi Main Road, Kalyananagar, Bengaluru-560072</small>
-                    <a href="mailto:info@helios-elec.com" class="helios-topbar-item text-white text-decoration-none"><i class="fa fa-envelope me-2"></i><span class="d-none d-sm-inline">info@helios-elec.com</span></a>
+                    <a href="mailto:info@helios-elec.com" class="helios-topbar-item text-white text-decoration-none"><i class="fa fa-envelope me-2"></i><span>info@helios-elec.com</span></a>
                     <a href="tel:+919380174938" class="helios-topbar-item text-white text-decoration-none"><i class="fa fa-phone-alt me-2"></i>+91 93801 74938</a>
                     <div class="helios-topbar-social d-flex">
                         <a class="btn btn-sm-square btn-light text-primary rounded-circle ms-1 ms-lg-2" href=""><i class="fab fa-facebook-f"></i></a>
@@ -66,15 +63,19 @@
     <div class="container-fluid bg-white sticky-top">
         <div class="container">
             <nav class="navbar navbar-expand-lg bg-white navbar-light p-lg-0">
-                <a href="index.html" class="navbar-brand d-lg-none helios-logo-link">
+                <a href="index.html" class="navbar-brand helios-logo-link d-lg-none">
                     <img src="img/logo.png" alt="Helios Electronics" class="helios-logo helios-logo-navbar">
                 </a>
-                <button type="button" class="navbar-toggler me-0" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+                <button type="button" class="navbar-toggler me-0 ms-auto" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarCollapse">
-                    <div class="navbar-nav">
-                        <a href="index.html" class="nav-item nav-link active">Home</a>
+                    <div class="helios-navbar-menu">
+                        <a href="index.html" class="helios-logo-link helios-nav-logo">
+                            <img src="img/logo.png" alt="Helios Electronics" class="helios-logo helios-logo-navbar">
+                        </a>
+                        <div class="navbar-nav align-items-lg-center">
+                            <a href="index.html" class="nav-item nav-link active">Home</a>
                         <a href="about.html" class="nav-item nav-link">About</a>
                         <a href="service.html" class="nav-item nav-link">Services</a>
                         <a href="project.html" class="nav-item nav-link">Our Products</a>
@@ -85,6 +86,7 @@
                             </div>
                         </div>
                         <a href="contact.html" class="nav-item nav-link">Contact</a>
+                        </div>
                     </div>
                     <div class="ms-auto d-none d-lg-block">
                         <a href="quote.html" class="btn btn-primary rounded-pill py-2 px-3">Get a Quote</a>
@@ -97,24 +99,43 @@
 
 <!-- Carousel Start -->
 <style>
-#header-carousel .carousel-item img{
-    width:100%;
-    height:650px;
-    object-fit:cover;
-    display:block;
+#header-carousel {
+    overflow: hidden;
 }
 
-@media (max-width:991px){
-    #header-carousel .carousel-item{
-        min-height:0;
-        height:auto;
+#header-carousel .carousel-inner {
+    max-height: 650px;
+}
+
+#header-carousel .carousel-item {
+    background-color: #f8f9fa;
+}
+
+#header-carousel .carousel-item img {
+    width: 100%;
+    height: 650px;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+}
+
+@media (max-width: 991.98px) {
+    #header-carousel .carousel-inner {
+        max-height: none;
     }
 
-    #header-carousel .carousel-item img{
-        width:100%;
-        height:auto;
-        object-fit:contain;
-        display:block;
+    #header-carousel .carousel-item img {
+        height: auto;
+        min-height: 220px;
+        max-height: 420px;
+        object-fit: contain;
+    }
+}
+
+@media (max-width: 575.98px) {
+    #header-carousel .carousel-item img {
+        min-height: 180px;
+        max-height: 320px;
     }
 }
 </style>
@@ -130,6 +151,9 @@
         <div class="carousel-indicators">
             <button type="button" data-bs-target="#header-carousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
             <button type="button" data-bs-target="#header-carousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#header-carousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+            <button type="button" data-bs-target="#header-carousel" data-bs-slide-to="3" aria-label="Slide 4"></button>
+            <button type="button" data-bs-target="#header-carousel" data-bs-slide-to="4" aria-label="Slide 5"></button>
         </div>
         <div class="carousel-inner">
 
@@ -139,6 +163,18 @@
 
             <div class="carousel-item">
                 <img src="img/homesecslide.jpeg" class="d-block w-100" alt="Helios Banner 2">
+            </div>
+
+            <div class="carousel-item">
+                <img src="img/homethirdslide.jpeg" class="d-block w-100" alt="Helios Banner 3">
+            </div>
+
+            <div class="carousel-item">
+                <img src="img/homefourslide.jpeg" class="d-block w-100" alt="Helios Banner 4">
+            </div>
+
+            <div class="carousel-item">
+                <img src="img/homefiveslide.jpeg" class="d-block w-100" alt="Helios Banner 5">
             </div>
 
         </div>
@@ -514,7 +550,7 @@
                             <h3 class="mb-4">Visit Us</h3>
                             <p class="mb-4"><i class="fa fa-map-marker-alt text-primary me-3"></i>1st Floor, No.2718/3015, Nagarbhavi Main Road, Kalyananagar, Bengaluru-560072, Karnataka, India</p>
                             <p class="mb-2"><i class="fa fa-phone-alt text-primary me-3"></i>+91 93801 74938</p>
-                            <p class="mb-4"><i class="fa fa-envelope text-primary me-3"></i>info@helios-elec.com</p>
+                            <p class="mb-4"><i class="fa fa-envelope text-primary me-3"></i><a href="mailto:info@helios-elec.com" class="text-primary fw-medium">info@helios-elec.com</a></p>
                             <h5 class="mb-3">Business Hours</h5>
                             <ul class="list-unstyled mb-0">
                                 <li class="mb-2"><i class="fa fa-clock text-primary me-3"></i>Monday – Friday: 9:00 AM to 6:00 PM</li>
@@ -723,7 +759,7 @@
                     <div class="bg-white rounded p-4 p-md-5 shadow-sm">
                         <h2 class="mb-4">Request For Quotation</h2>
                         <p class="text-secondary mb-4">Please provide Part Number, Manufacturer (MFR), required quantity, and your contact details.</p>
-                        <form action="mailto:info@helios-elec.com" method="post" enctype="text/plain">
+                        <form class="helios-email-form" data-form-type="quote">
                             <div class="row g-3">
                                 <div class="col-sm-6">
                                     <div class="form-floating">
@@ -791,7 +827,7 @@
                 <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
                     <div class="bg-white rounded p-4 p-md-5 shadow-sm h-100">
                         <h3 class="mb-4">Send Us a Message</h3>
-                        <form action="mailto:info@helios-elec.com" method="post" enctype="text/plain">
+                        <form class="helios-email-form" data-form-type="contact">
                             <div class="row g-3">
                                 <div class="col-md-6">
                                     <div class="form-floating">
@@ -912,7 +948,7 @@
                     <h4 class="text-white mb-4">Our Office</h4>
                     <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i>1st Floor, No.2718/3015, Nagarbhavi Main Road, Kalyananagar, Bengaluru-560072, Karnataka, India</p>
                     <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>+91 93801 74938</p>
-                    <p class="mb-2"><i class="fa fa-envelope me-3"></i>info@helios-elec.com</p>
+                    <p class="mb-2"><i class="fa fa-envelope me-3"></i><a href="mailto:info@helios-elec.com" class="text-body">info@helios-elec.com</a></p>
                     <div class="d-flex pt-3">
                         <a class="btn btn-square btn-light rounded-circle me-2" href=""><i class="fab fa-twitter"></i></a>
                         <a class="btn btn-square btn-light rounded-circle me-2" href=""><i class="fab fa-facebook-f"></i></a>
