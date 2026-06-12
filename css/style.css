@@ -134,10 +134,13 @@
 
 /*** Logo ***/
 .helios-logo-link {
-    display: inline-flex;
     align-items: center;
     flex-shrink: 0;
     line-height: 0;
+}
+
+.helios-nav-logo {
+    display: none !important;
 }
 
 .helios-logo {
@@ -147,11 +150,33 @@
 }
 
 .helios-logo-topbar {
+    display: inline-flex;
     max-height: 52px;
 }
 
 .helios-logo-navbar {
-    max-height: 46px;
+    max-height: 52px;
+}
+
+@media (min-width: 992px) {
+    .helios-nav-logo {
+        display: inline-flex !important;
+        margin-right: 25px;
+        padding: 18px 0;
+    }
+
+    .helios-logo-link {
+        display: inline-flex;
+    }
+
+    .helios-navbar-menu {
+        display: flex;
+        align-items: center;
+    }
+
+    .navbar .navbar-collapse {
+        align-items: center;
+    }
 }
 
 
@@ -178,6 +203,17 @@
 @media (max-width: 991.98px) {
     .helios-topbar {
         font-size: 0.8125rem;
+    }
+
+    .navbar-brand.helios-logo-link {
+        display: inline-flex !important;
+        align-items: center;
+        padding: 0;
+        margin-right: 0;
+    }
+
+    .helios-logo-navbar {
+        max-height: 46px;
     }
 
     .helios-topbar-contact {
@@ -408,22 +444,52 @@
     }
 }
 
-.page-header {
-    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(../img/exxelia.jpeg) center center no-repeat;
-    background-size: cover;
-    background-position: center;
-    display: flex;
-    align-items: center;
+.page-header,
+.helios-page-banner {
+    overflow: hidden;
 }
 
+.helios-page-banner-media {
+    position: relative;
+    background: #0d1b35;
+}
+
+.helios-page-banner-img {
+    width: 100%;
+    height: 420px;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+}
+
+.helios-page-banner-overlay {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.55));
+}
+
+.helios-page-banner-overlay .breadcrumb-item+.breadcrumb-item::before,
 .page-header .breadcrumb-item+.breadcrumb-item::before {
     color: var(--light);
 }
 
+.helios-page-banner-overlay .breadcrumb-item,
+.helios-page-banner-overlay .breadcrumb-item a,
 .page-header .breadcrumb-item,
 .page-header .breadcrumb-item a {
     font-size: 18px;
     color: var(--light);
+}
+
+.page-header {
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(../img/homefourslide.jpeg) center center no-repeat;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
 }
 
 
@@ -433,16 +499,39 @@
     padding-bottom: 3rem;
 }
 
-.page-header + .helios-about-section {
+.page-header + .helios-about-section,
+.helios-page-banner + .helios-about-section {
     padding-top: 0;
 }
 
-.page-header + .services-section {
+.page-header + .services-section,
+.helios-page-banner + .services-section {
     padding-top: 1.5rem;
 }
 
-.page-header + .products-page-section {
+.page-header + .products-page-section,
+.helios-page-banner + .products-page-section {
     padding-top: 1.5rem;
+}
+
+@media (max-width: 991.98px) {
+    .helios-page-banner-img {
+        height: auto;
+        min-height: 200px;
+        max-height: 360px;
+        object-fit: contain;
+        object-position: center top;
+    }
+
+    .helios-page-banner-overlay h1.display-2 {
+        font-size: clamp(1.75rem, 7vw, 2.5rem);
+        margin-bottom: 0.75rem !important;
+    }
+
+    .helios-page-banner-overlay .breadcrumb-item,
+    .helios-page-banner-overlay .breadcrumb-item a {
+        font-size: 15px;
+    }
 }
 
 @media (max-width: 767.98px) {
@@ -452,6 +541,10 @@
         padding-bottom: 2.5rem !important;
         margin-bottom: 2rem !important;
         min-height: 200px;
+    }
+
+    .helios-page-banner {
+        margin-bottom: 2rem !important;
     }
 
     .page-header .container {
@@ -470,10 +563,21 @@
     }
 }
 
+@media (max-width: 575.98px) {
+    .helios-page-banner-img {
+        min-height: 160px;
+        max-height: 260px;
+    }
+}
+
 @media (min-width: 768px) {
 
     .page-header {
         min-height: 280px;
+    }
+
+    .helios-page-banner-img {
+        height: 360px;
     }
 }
 
@@ -481,6 +585,10 @@
 
     .page-header {
         min-height: 320px;
+    }
+
+    .helios-page-banner-img {
+        height: 420px;
     }
 }
 

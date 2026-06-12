@@ -42,12 +42,9 @@
     <div class="container-fluid bg-primary text-white helios-topbar">
         <div class="container py-2 py-lg-3">
             <div class="d-flex align-items-center justify-content-between justify-content-lg-start flex-wrap gap-2">
-                <a href="index.html" class="helios-logo-link d-none d-lg-inline-flex">
-                    <img src="img/logo.png" alt="Helios Electronics" class="helios-logo helios-logo-topbar">
-                </a>
                 <div class="d-flex align-items-center flex-wrap ms-lg-auto helios-topbar-contact">
                     <small class="helios-topbar-item helios-topbar-address d-none d-xl-inline"><i class="fa fa-map-marker-alt me-2"></i>1st Floor, No.2718/3015, Nagarbhavi Main Road, Kalyananagar, Bengaluru-560072</small>
-                    <a href="mailto:info@helios-elec.com" class="helios-topbar-item text-white text-decoration-none"><i class="fa fa-envelope me-2"></i><span class="d-none d-sm-inline">info@helios-elec.com</span></a>
+                    <a href="mailto:info@helios-elec.com" class="helios-topbar-item text-white text-decoration-none"><i class="fa fa-envelope me-2"></i><span>info@helios-elec.com</span></a>
                     <a href="tel:+919380174938" class="helios-topbar-item text-white text-decoration-none"><i class="fa fa-phone-alt me-2"></i>+91 93801 74938</a>
                     <div class="helios-topbar-social d-flex">
                         <a class="btn btn-sm-square btn-light text-primary rounded-circle ms-1 ms-lg-2" href=""><i class="fab fa-facebook-f"></i></a>
@@ -65,14 +62,18 @@
     <div class="container-fluid bg-white sticky-top">
         <div class="container">
             <nav class="navbar navbar-expand-lg bg-white navbar-light p-lg-0">
-                <a href="index.html" class="navbar-brand d-lg-none helios-logo-link">
+                <a href="index.html" class="navbar-brand helios-logo-link d-lg-none">
                     <img src="img/logo.png" alt="Helios Electronics" class="helios-logo helios-logo-navbar">
                 </a>
-                <button type="button" class="navbar-toggler me-0" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+                <button type="button" class="navbar-toggler me-0 ms-auto" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarCollapse">
-                    <div class="navbar-nav">
+                    <div class="helios-navbar-menu">
+                        <a href="index.html" class="helios-logo-link helios-nav-logo">
+                            <img src="img/logo.png" alt="Helios Electronics" class="helios-logo helios-logo-navbar">
+                        </a>
+                        <div class="navbar-nav align-items-lg-center">
                         <a href="index.html" class="nav-item nav-link">Home</a>
                         <a href="about.html" class="nav-item nav-link">About</a>
                         <a href="service.html" class="nav-item nav-link">Services</a>
@@ -84,6 +85,7 @@
                             </div>
                         </div>
                         <a href="contact.html" class="nav-item nav-link active">Contact</a>
+                        </div>
                     </div>
                     <div class="ms-auto d-none d-lg-block">
                         <a href="quote.html" class="btn btn-primary rounded-pill py-2 px-3">Get a Quote</a>
@@ -96,15 +98,20 @@
 
 
     <!-- Page Header Start -->
-    <div class="container-fluid page-header py-5 mb-5 wow fadeIn" data-wow-delay="0.1s">
-        <div class="container text-center py-5">
-            <h1 class="display-2 text-white mb-4 animated slideInDown">Contact Us</h1>
-            <nav aria-label="breadcrumb animated slideInDown">
-                <ol class="breadcrumb justify-content-center mb-0">
-                    <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-                    <li class="breadcrumb-item text-primary" aria-current="page">Contact Us</li>
-                </ol>
-            </nav>
+    <div class="container-fluid helios-page-banner mb-5 wow fadeIn" data-wow-delay="0.1s">
+        <div class="helios-page-banner-media">
+            <img src="img/homefourslide.jpeg" class="helios-page-banner-img" alt="Helios Electronics">
+            <div class="helios-page-banner-overlay">
+                <div class="container text-center py-4 py-lg-5">
+                    <h1 class="display-2 text-white mb-3 mb-lg-4 animated slideInDown">Contact Us</h1>
+                    <nav aria-label="breadcrumb animated slideInDown">
+                        <ol class="breadcrumb justify-content-center mb-0">
+                            <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                            <li class="breadcrumb-item text-primary" aria-current="page">Contact Us</li>
+                        </ol>
+                    </nav>
+                </div>
+            </div>
         </div>
     </div>
     <!-- Page Header End -->
@@ -122,7 +129,7 @@
                 <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
                     <div class="bg-white rounded p-4 p-md-5 shadow-sm h-100">
                         <h3 class="mb-4">Send Us a Message</h3>
-                        <form class="helios-whatsapp-form" data-form-type="contact">
+                        <form class="helios-email-form" data-form-type="contact">
                             <div class="row g-3">
                                 <div class="col-md-6">
                                     <div class="form-floating">
@@ -149,7 +156,7 @@
                                     </div>
                                 </div>
                                 <div class="col-12">
-                                    <button class="btn btn-primary rounded-pill py-3 px-5" type="submit"><i class="fab fa-whatsapp me-2"></i>Send via WhatsApp</button>
+                                    <button class="btn btn-primary rounded-pill py-3 px-5" type="submit"><i class="fa fa-envelope me-2"></i>Send Email</button>
                                 </div>
                             </div>
                         </form>
@@ -244,7 +251,7 @@
                     <h4 class="text-white mb-4">Our Office</h4>
                     <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i>1st Floor, No.2718/3015, Nagarbhavi Main Road, Kalyananagar, Bengaluru-560072, Karnataka, India</p>
                     <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>+91 93801 74938</p>
-                    <p class="mb-2"><i class="fa fa-envelope me-3"></i>info@helios-elec.com</p>
+                    <p class="mb-2"><i class="fa fa-envelope me-3"></i><a href="mailto:info@helios-elec.com" class="text-body">info@helios-elec.com</a></p>
                     <div class="d-flex pt-3">
                         <a class="btn btn-square btn-light rounded-circle me-2" href=""><i class="fab fa-twitter"></i></a>
                         <a class="btn btn-square btn-light rounded-circle me-2" href=""><i class="fab fa-facebook-f"></i></a>
